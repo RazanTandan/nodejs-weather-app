@@ -4,7 +4,7 @@ const geoCode = require("./utils/geocode.js");
 const foreCast = require("./utils/forecast.js");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 //Setting up template engine
 app.set("view engine", "hbs");
@@ -89,5 +89,5 @@ app.get("*", (req, res) => {
 
 //Listening
 app.listen(port, () => {
-  console.log("Server is up and running...");
+  console.log("Server is up and running on port " + port + "...");
 });
